@@ -12,6 +12,55 @@ function valid(button) {
 }
 
 function checkForWin(board, players, currentTurn) {
+  if (board[0].innerHTML === players[currentTurn] &&
+      board[0].innerHTML === players[currentTurn] &&
+      board[0].innerHTML === players[currentTurn]){
+    return true;
+  }
+  if (board[0].innerHTML === players[currentTurn] &&
+      board[1].innerHTML === players[currentTurn] &&
+      board[2].innerHTML === players[currentTurn]){
+    return true;
+  }
+  if (board[3].innerHTML === players[currentTurn] &&
+      board[4].innerHTML === players[currentTurn] &&
+      board[5].innerHTML === players[currentTurn]){
+    return true;
+  }
+  if (board[6].innerHTML === players[currentTurn] &&
+      board[7].innerHTML === players[currentTurn] &&
+      board[8].innerHTML === players[currentTurn]){
+    return true;
+  }
+  if (board[0].innerHTML === players[currentTurn] &&
+      board[4].innerHTML === players[currentTurn] &&
+      board[8].innerHTML === players[currentTurn]){
+    return true;
+  }
+  if (board[2].innerHTML === players[currentTurn] &&
+      board[4].innerHTML === players[currentTurn] &&
+      board[6].innerHTML === players[currentTurn]){
+    return true;
+  }
+  if (board[0].innerHTML === players[currentTurn] &&
+      board[3].innerHTML === players[currentTurn] &&
+      board[6].innerHTML === players[currentTurn]){
+    return true;
+  }
+  if (board[1].innerHTML === players[currentTurn] &&
+      board[4].innerHTML === players[currentTurn] &&
+      board[7].innerHTML === players[currentTurn]){
+    return true;
+  }
+  if (board[2].innerHTML === players[currentTurn] &&
+      board[5].innerHTML === players[currentTurn] &&
+      board[8].innerHTML === players[currentTurn]){
+    return true;
+  }
+}
+
+  // if row is all players[currentTurn]
+  // if column is all players[currentTurn]
 
 }
 function main() {
