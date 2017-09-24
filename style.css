@@ -1,18 +1,22 @@
 #game {
-  width: 600px;
-  height: 600px;
+  width: 450px;
+  height: 450px;
   background: #eee;
   border: 2px solid black;
   text-align: center;
   margin: 50px auto;
-  padding: 30px;
+  padding: 20px;
 }
-div {
+#game div {
+  clear: both;
+}
 
-}
-button {
+#game button {
+  display: block;
+  float: left;
   width: 100px;
   height: 100px;
+  margin: 5px 10px;
 }
 
 #actions {
