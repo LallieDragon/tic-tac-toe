@@ -1,6 +1,5 @@
-// wait for the DOM to finish loading
-$(document).ready(function() {
-  // all code to manipulate the DOM
-  // goes inside this function
-
-});
+function main() {
+  let board = document.querySelectorAll('button');
+  console.log(board);
+}
+main();
