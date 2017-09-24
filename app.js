@@ -59,10 +59,10 @@ function checkForWin(board, players, currentTurn) {
   }
 }
 
-  // if row is all players[currentTurn]
-  // if column is all players[currentTurn]
-
+function setMarker(button, mark) {
+  button.innerHTML = mark;
 }
+
 function main() {
   let board = document.querySelectorAll('button');
   let players = ['X', 'O'];
@@ -80,12 +80,17 @@ function main() {
 
       //write this
       if (!valid(this)) {
+        showAction(`Invalid move, Player ${players[currentTurn]}!`)
       }
       else {
         setMarker(this, players[currentTurn]);
 
         //Complete function gameComplete
         gameComplete = checkForWin(board, players, currentTurn);
+
+        if (checkForWin) {
+          showAction(`Player ${players[currentTurn]} has defeated their opponent`);
+        }
 
         //over
         //draw
@@ -95,7 +100,7 @@ function main() {
         //Ensures current player is always X or O
         currentTurn = currentTurn % 2;
 
-        showAction(`It is ${currentTurn}\'s turn. Continue the battle!`);
+        showAction(`It is ${players[currentTurn]}\'s turn. Continue the battle!`);
       }
     })
   }
