@@ -51,26 +51,30 @@ function checkForWin(board, players, currentTurn) {
   return false;
 };
 
-function full(board) {
-  for (let i = 0; i < board.length; i++) {
-    if (board[i].innerHTML.length == 0); {
-      return false;
-    }
-  }
-  return true;
-};
-
-function aDraw(board) {
-  return (!checkForWin(board, ["X"], 0)) && full(board);
-};
-
 function valid(button) {
   return button.innerHTML.length == 0;
 };
 
 function setMarker(button, mark) {
   button.innerHTML = mark;
+};
+
+
+
+function full(board) {
+  for (let i = 0; i < 9; i++) {
+    if (board[i].innerHTML == 'X' || board[i].innerHTML == 'O');
+    {
+      return false;
+    }
+  }
+  return true;
 }
+
+function aDraw(board) {
+  return (!checkForWin(board, ["X"], 0)) && full(board);
+};
+
 
 function main() {
   let board = document.querySelectorAll('button');
@@ -90,9 +94,9 @@ function main() {
       if (!valid(this)) {
         showAction(`Invalid move, Player ${players[currentTurn]}!`)
       }
+
       else {
         setMarker(this, players[currentTurn]);
-
         gameComplete = checkForWin(board, players, currentTurn);
 
         if (gameComplete) {
@@ -100,18 +104,16 @@ function main() {
           return;
         }
 
-        if (full(board)) {
+        if (aDraw(board)) {
           showAction("Players X and O have died.");
           return;
         }
         currentTurn++;
-
-        //Ensures current player is always X or O
         currentTurn = currentTurn % 2;
 
         showAction(`It is ${players[currentTurn]}\'s turn. Continue the battle!`);
       }
-    })
+    });
   }
 }
 
