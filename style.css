@@ -20,6 +20,10 @@
   animation: colorhue 10s infinite;
   background-color: #e74c3c;
   font-size: 80px;
+  box-shadow: inset 0 0 0 1px #27496d;
+  border: none;
+  border-radius: 10px;
+  background-image: linear-gradient(top);
 }
 
 @keyframes colorhue {
