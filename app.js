@@ -7,6 +7,13 @@ let action = function(showElement) {
   return (setMessage);
 };
 
+function valid(button) {
+  return button.innerHTML.length == 0;
+}
+
+function checkForWin(board, players, currentTurn) {
+
+}
 function main() {
   let board = document.querySelectorAll('button');
   let players = ['X', 'O'];
