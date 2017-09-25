@@ -1,8 +1,10 @@
-  var board = document.querySelectorAll('#game button');
-  var players = ['X', 'O'];
-  var currentTurn = 0;
-  var gameComplete = false;
-  var clicks = 0;
+var board = document.querySelectorAll('#game button');
+var players = ['X', 'O'];
+var currentTurn = 0;
+var gameComplete = false;
+var clicks = 0;
+var playerXScore = 0;
+var playerOScore = 0;
 
 let action = function(showElement) {
   let showAction = showElement;
@@ -58,37 +60,32 @@ function checkForWin(board, players, currentTurn) {
 };
 
 function valid(button) {
-  console.log('CHECKING IS VALID');
-  console.log('element: ', button);
-  console.log('length: ', button.innerText.length);
   if (button.innerText !== 'X' && button.innerText !== 'O') {
     return true;
   }
 };
 
 function setMarker(button, mark) {
-  ////button.innerText = mark;
 button.innerText = mark;
 };
 
 function reset() {
-  //let board = document.querySelectorAll('#game button');
   players = ['X', 'O'];
   currentTurn = 0;
   gameComplete = false;
   clicks = 0;
+
   for (let i = 0; i < board.length; i++) {
     board[i].innerText = '';
   };
+
   var showAction = new action(document.querySelector('#actions'));
   showAction(`Game board is set. Player ${players[currentTurn]}, begin!`);
 
-  ///main();
 }
 
 function main() {
   var showAction = new action(document.querySelector('#actions'));
-
 
   for (let i = 0; i < board.length; i++) {
     if (board[i].length != 0) {
@@ -101,8 +98,6 @@ function main() {
   for (let i = 0; i < board.length; i++) {
     board[i].addEventListener("click", function() {
 
-      console.log(valid(this));
-
       if (gameComplete) {
         return;
       }
@@ -112,8 +107,6 @@ function main() {
       }
 
       else {
-  console.log("setMarker "+this+"|"+players+"|"+currentTurn+"|"+players[currentTurn]);
-
         setMarker(board[i], players[currentTurn]);
         gameComplete = checkForWin(board, players, currentTurn);
         clicks++;

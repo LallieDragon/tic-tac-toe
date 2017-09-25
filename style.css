@@ -26,6 +26,7 @@ body {
 
 #game button {
   display: inline-block;
+  text-align: center;
   width: 100px;
   height: 100px;
   margin: 5px 5px;
@@ -34,13 +35,17 @@ body {
   font-size: 94px;
   border-radius: 10px;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 1));
+  transition-property: background, border-radius;
+  transition-duration: .2s, 1s;
+  transition-timing-function: linear;
+}
+
+#game button::hover {
+  border-radius: 90%;
+  animation: flip;
 }
 
 #game button:active {
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  margin: 5px 5px;
   animation: colorhueTwo 5s infinite;
   background-color: #e74c3c;
   font-size: 94px;
@@ -50,7 +55,7 @@ body {
 .fun {
 
   width: 100px;
-  height: 15px;
+  height: 20px;
 }
 
 @keyframes colorhue {
@@ -69,4 +74,37 @@ body {
   60% { background-color: rgba(52, 152, 219, 0.7); }
   80% { background-color: rgba(155, 89, 182, 0.7); }
   100% { background-color: rgba(231, 76, 60, 0.7); }
+}
+
+@keyframes flip {
+  from {
+    transform: perspective(400px) rotate3d(0, 1, 0, -360deg);
+    animation-timing-function: ease-out;
+  }
+
+  40% {
+    transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg);
+    animation-timing-function: ease-out;
+  }
+
+  50% {
+    transform: perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg);
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    transform: perspective(400px) scale3d(.95, .95, .95);
+    animation-timing-function: ease-in;
+  }
+
+  to {
+    transform: perspective(400px);
+    animation-timing-function: ease-in;
+  }
+}
+
+.animated.flip {
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  animation-name: flip;
 }
