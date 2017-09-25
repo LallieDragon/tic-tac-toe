@@ -80,7 +80,10 @@ function reset() {
   for (let i = 0; i < board.length; i++) {
     board[i].innerText = '';
   };
-  ////main();
+  var showAction = new action(document.querySelector('#actions'));
+  showAction(`Game board is set. Player ${players[currentTurn]}, begin!`);
+
+  ///main();
 }
 
 function main() {
