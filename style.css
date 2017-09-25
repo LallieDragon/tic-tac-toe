@@ -1,50 +1,72 @@
 body {
   text-align: center;
   font-family: Josefin Sans, sans;
+  background-color: rgba(60, 59, 80, 0.3);
+}
+
+#actions {
+  margin: 10px auto 0;
+  padding: 6px;
+  border-radius: 5px;
+  width: 310px;
+  height: 15px;
+  background-color: rgba(60, 59, 80, 0.3);
 }
 
 #game {
-  width: 450px;
-  height: 450px;
-  background: white;
+  width: 350px;
+  height: 350px;
+  background: #4d4950;
   border: 2px solid black;
+  border-radius: 5px;
   text-align: center;
-  margin: 50px auto;
+  margin: 20px auto;
   padding: 15px;
-}
-#game div {
-  clear: both;
 }
 
 #game button {
-  display: block;
-  float: left;
+  display: inline-block;
   width: 100px;
   height: 100px;
   margin: 5px 5px;
   animation: colorhue 10s infinite;
   background-color: #e74c3c;
-  font-size: 80px;
-  box-shadow: inset 0 0 0 1px #27496d;
-  border: none;
+  font-size: 94px;
   border-radius: 10px;
-  background-image: linear-gradient(top);
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 1));
 }
 
-#game button #left {
-  padding: 0, 0, 0, 75px;
+#game button:active {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin: 5px 5px;
+  animation: colorhueTwo 5s infinite;
+  background-color: #e74c3c;
+  font-size: 94px;
+  border-radius: 10px;
+}
+
+.fun {
+
+  width: 100px;
+  height: 15px;
 }
 
 @keyframes colorhue {
-  0% { background-color: rgba(231, 76, 60, 0.2); }
-  20% { background-color: rgba(241, 196, 15, 0.2); }
-  40% { background-color: rgba(26, 188, 156, 0.2); }
-  60% { background-color: rgba(52, 152, 219, 0.2); }
-  80% { background-color: rgba(155, 89, 182, 0.2); }
-  100% { background-color: rgba(231, 76, 60, 0.2); }
+  0% { background-color: rgba(231, 76, 60, 0.3); }
+  20% { background-color: rgba(241, 196, 15, 0.3); }
+  40% { background-color: rgba(26, 188, 156, 0.3); }
+  60% { background-color: rgba(52, 152, 219, 0.3); }
+  80% { background-color: rgba(155, 89, 182, 0.3); }
+  100% { background-color: rgba(231, 76, 60, 0.3); }
 }
 
-#actions {
-  text-align: center;
-  padding: 20px, 10px;
+@keyframes colorhueTwo {
+  0% { background-color: rgba(231, 76, 60, 0.7); }
+  20% { background-color: rgba(241, 196, 15, 0.7); }
+  40% { background-color: rgba(26, 188, 156, 0.7); }
+  60% { background-color: rgba(52, 152, 219, 0.7); }
+  80% { background-color: rgba(155, 89, 182, 0.7); }
+  100% { background-color: rgba(231, 76, 60, 0.7); }
 }
