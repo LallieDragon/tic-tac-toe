@@ -60,28 +60,13 @@ function setMarker(button, mark) {
 };
 
 
-
-function full(board) {
-  for (let i = 0; i < 9; i++) {
-    if (board[i].innerHTML == 'X' || board[i].innerHTML == 'O');
-    {
-      return false;
-    }
-  }
-  return true;
-}
-
-function aDraw(board) {
-  return (!checkForWin(board, ["X"], 0)) && full(board);
-};
-
-
 function main() {
   let board = document.querySelectorAll('button');
   let players = ['X', 'O'];
   let currentTurn = 0;
   let gameComplete = false;
   let showAction = new action(document.querySelector('#actions'));
+  let clicks = 0;
 
   showAction(`Game board is set. Player ${players[currentTurn]}, begin!`);
 
@@ -104,7 +89,7 @@ function main() {
           return;
         }
 
-        if (aDraw(board)) {
+        if (clicks === 8) {
           showAction("Players X and O have died.");
           return;
         }
@@ -112,6 +97,7 @@ function main() {
         currentTurn = currentTurn % 2;
 
         showAction(`It is ${players[currentTurn]}\'s turn. Continue the battle!`);
+        clicks++;
       }
     });
   }

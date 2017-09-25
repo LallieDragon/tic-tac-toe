@@ -1,3 +1,8 @@
+body {
+  text-align: center;
+  font-family: Josefin Sans, sans;
+}
+
 #game {
   width: 450px;
   height: 450px;
@@ -5,7 +10,7 @@
   border: 2px solid black;
   text-align: center;
   margin: 50px auto;
-  padding: 20px;
+  padding: 15px;
 }
 #game div {
   clear: both;
@@ -16,7 +21,7 @@
   float: left;
   width: 100px;
   height: 100px;
-  margin: 5px 10px;
+  margin: 5px 5px;
   animation: colorhue 10s infinite;
   background-color: #e74c3c;
   font-size: 80px;
@@ -24,6 +29,10 @@
   border: none;
   border-radius: 10px;
   background-image: linear-gradient(top);
+}
+
+#game button #left {
+  padding: 0, 0, 0, 75px;
 }
 
 @keyframes colorhue {
