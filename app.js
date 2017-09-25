@@ -59,9 +59,19 @@ function setMarker(button, mark) {
   button.innerHTML = mark;
 };
 
+function reset() {
+  let currentTurn = 0;
+  let gameComplete = false;
+  let clicks = 0;
+  let board = document.querySelectorAll('#game button');
+  for (let i = 0; i <board.length; i++) {
+    board[i].innerHTML = '';
+  }
+  main();
+}
 
 function main() {
-  let board = document.querySelectorAll('button');
+  let board = document.querySelectorAll('#game button');
   let players = ['X', 'O'];
   let currentTurn = 0;
   let gameComplete = false;
@@ -90,7 +100,7 @@ function main() {
         }
 
         if (clicks === 8) {
-          showAction("Players X and O have died.");
+          showAction("No one wins.");
           return;
         }
         currentTurn++;
