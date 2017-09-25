@@ -3,8 +3,8 @@ var players = ['X', 'O'];
 var currentTurn = 0;
 var gameComplete = false;
 var clicks = 0;
-var playerXScore = 0;
-var playerOScore = 0;
+var score = [{X: 0},
+            {O: 0}]
 
 let action = function(showElement) {
   let showAction = showElement;
